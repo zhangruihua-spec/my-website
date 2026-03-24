@@ -4,114 +4,250 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>中国味道 - 全国美食地图</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #e63946;
-            --bg-color: #f1faee;
-            --text-color: #1d3557;
+            --primary-color: #d62828; /* 深红 */
+            --secondary-color: #f77f00; /* 橙 */
+            --accent-color: #fcbf49; /* 黄 */
+            --bg-color: #eae2b7; /* 奶白/米色 */
+            --card-bg: #ffffff;
+            --text-color: #003049; /* 深蓝 */
+            --text-light: #666;
         }
-        body {
-            font-family: "Microsoft YaHei", sans-serif;
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Serif SC', serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.8;
+            overflow-x: hidden;
         }
+
+        /* Hero Section */
         header {
-            background-color: var(--primary-color);
-            color: white;
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&q=80&w=1600') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 2rem 1rem;
+            color: white;
+            padding: 0 20px;
         }
+
+        header h1 {
+            font-family: 'Zhi Mang Xing', cursive;
+            font-size: 5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        /* Container */
         .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+            max-width: 1200px;
+            margin: -50px auto 4rem;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
         }
+
+        /* Grid */
         .food-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 30px;
         }
+
+        /* Card Design */
         .food-card {
-            background: white;
-            border-radius: 10px;
+            background: var(--card-bg);
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(0,0,0,0.05);
         }
+
         .food-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
+
+        .food-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .food-card:hover .food-image {
+            transform: scale(1.1);
+        }
+
         .food-info {
-            padding: 1.5rem;
+            padding: 2rem;
         }
-        .food-info h3 {
-            margin-top: 0;
-            color: var(--primary-color);
-        }
+
         .tag {
             display: inline-block;
-            background: #a8dadc;
-            padding: 2px 8px;
-            border-radius: 4px;
+            background: var(--accent-color);
+            color: var(--text-color);
+            padding: 4px 12px;
+            border-radius: 50px;
             font-size: 0.8rem;
-            margin-bottom: 10px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
         }
+
+        .food-info h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .food-info h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+
+        .food-info p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            text-align: justify;
+        }
+
+        /* Footer */
         footer {
+            background-color: var(--text-color);
+            color: white;
             text-align: center;
-            padding: 2rem;
-            color: #666;
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            opacity: 0.7;
             font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 3.5rem; }
+            header p { font-size: 1.1rem; }
+            .container { margin-top: -30px; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>🍜 中国味道</h1>
-    <p>探索大江南北的舌尖记忆</p>
+    <h1>中国味道</h1>
+    <p>—— 探索大江南北的舌尖记忆 ——</p>
 </header>
 
 <div class="container">
     <div class="food-grid">
+        <!-- 北京烤鸭 -->
         <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1594912953284-486609919f2d?auto=format&fit=crop&q=80&w=800" alt="北京烤鸭" class="food-image">
             <div class="food-info">
                 <span class="tag">华北 · 北京</span>
                 <h3>北京烤鸭</h3>
-                <p>以色泽红艳，肉质细嫩，味道醇厚，肥而不腻的特色，被誉为“天下美味”。</p>
+                <p>以色泽红艳，肉质细嫩，味道醇厚，肥而不腻的特色，被誉为“天下美味”。讲究挂炉烤制，皮脆肉嫩，配以荷叶饼、葱丝、甜面酱，回味无穷。</p>
             </div>
         </div>
 
+        <!-- 麻婆豆腐 -->
         <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&q=80&w=800" alt="麻婆豆腐" class="food-image">
             <div class="food-info">
                 <span class="tag">西南 · 四川</span>
                 <h3>麻婆豆腐</h3>
-                <p>川菜的代表作之一。讲究麻、辣、烫、香、酥、嫩、鲜、活，极具层次感。</p>
+                <p>川菜精髓之作。讲究麻、辣、烫、香、酥、嫩、鲜、活。选用上好豆腐与牛肉末，入口即化，椒香浓郁，是米饭的最佳拍档。</p>
             </div>
         </div>
 
+        <!-- 广式点心 -->
         <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1563245339-68d3746bb41c?auto=format&fit=crop&q=80&w=800" alt="广式点心" class="food-image">
             <div class="food-info">
                 <span class="tag">华南 · 广东</span>
-                <h3>广式点心 (饮茶)</h3>
-                <p>虾饺、烧卖、凤爪... 讲究精细、新鲜。不仅是食物，更是一种悠闲的生活方式。</p>
+                <h3>广式点心</h3>
+                <p>粤菜文化的缩影。虾饺皮薄如纸，烧卖馅料扎实，凤爪软糯入味。每一道点心都是师傅匠心独运的结晶，承载着“一盅两件”的闲适情怀。</p>
             </div>
         </div>
 
+        <!-- 扬州炒饭 -->
         <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&q=80&w=800" alt="扬州炒饭" class="food-image">
             <div class="food-info">
                 <span class="tag">华东 · 江苏</span>
                 <h3>扬州炒饭</h3>
-                <p>形态极佳，色泽分明，颗粒松散。每一粒米都包裹着蛋香，是淮扬菜的经典。</p>
+                <p>淮扬菜名片。要求“碎金闪烁，鲜润可口”。米粒晶莹，蛋香扑鼻，辅以火腿、虾仁、豌豆，色彩斑斓，颗粒分明，清淡而不失鲜美。</p>
+            </div>
+        </div>
+
+        <!-- 西安肉夹馍 -->
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&q=80&w=800" alt="肉夹馍" class="food-image">
+            <div class="food-info">
+                <span class="tag">西北 · 陕西</span>
+                <h3>西安肉夹馍</h3>
+                <p>东方汉堡。腊汁肉肥而不腻，瘦而不柴；白吉馍外酥里嫩，麦香浓郁。肉与馍的完美融合，每一口都是古城西安的豪爽与细腻。</p>
+            </div>
+        </div>
+
+        <!-- 兰州拉面 -->
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&q=80&w=800" alt="兰州拉面" class="food-image">
+            <div class="food-info">
+                <span class="tag">西北 · 甘肃</span>
+                <h3>兰州牛肉面</h3>
+                <p>讲究“一清、二白、三红、四绿、五黄”。汤头清澈鲜美，面条劲道十足。不仅是快餐，更是一门指尖上的面食艺术。</p>
             </div>
         </div>
     </div>
 </div>
 
 <footer>
-    <p>&copy; 2024 我的美食分享站点 | 由 GitHub Pages 提供动力</p>
+    <p>&copy; 2026 中国味道美食分享站 | 寻味中国，探索舌尖上的文化</p>
+    <p style="margin-top: 10px; font-size: 0.8rem;">Images from Unsplash | Typography: Noto Serif SC & Zhi Mang Xing</p>
 </footer>
 
 </body>
