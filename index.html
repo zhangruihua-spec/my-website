@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国味道 - 全国美食地图</title>
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --bg-color: #f1faee;
+            --text-color: #1d3557;
+        }
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .food-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .food-card:hover {
+            transform: translateY(-5px);
+        }
+        .food-info {
+            padding: 1.5rem;
+        }
+        .food-info h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        .tag {
+            display: inline-block;
+            background: #a8dadc;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🍜 中国味道</h1>
+    <p>探索大江南北的舌尖记忆</p>
+</header>
+
+<div class="container">
+    <div class="food-grid">
+        <div class="food-card">
+            <div class="food-info">
+                <span class="tag">华北 · 北京</span>
+                <h3>北京烤鸭</h3>
+                <p>以色泽红艳，肉质细嫩，味道醇厚，肥而不腻的特色，被誉为“天下美味”。</p>
+            </div>
+        </div>
+
+        <div class="food-card">
+            <div class="food-info">
+                <span class="tag">西南 · 四川</span>
+                <h3>麻婆豆腐</h3>
+                <p>川菜的代表作之一。讲究麻、辣、烫、香、酥、嫩、鲜、活，极具层次感。</p>
+            </div>
+        </div>
+
+        <div class="food-card">
+            <div class="food-info">
+                <span class="tag">华南 · 广东</span>
+                <h3>广式点心 (饮茶)</h3>
+                <p>虾饺、烧卖、凤爪... 讲究精细、新鲜。不仅是食物，更是一种悠闲的生活方式。</p>
+            </div>
+        </div>
+
+        <div class="food-card">
+            <div class="food-info">
+                <span class="tag">华东 · 江苏</span>
+                <h3>扬州炒饭</h3>
+                <p>形态极佳，色泽分明，颗粒松散。每一粒米都包裹着蛋香，是淮扬菜的经典。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 我的美食分享站点 | 由 GitHub Pages 提供动力</p>
+</footer>
+
+</body>
+</html>
