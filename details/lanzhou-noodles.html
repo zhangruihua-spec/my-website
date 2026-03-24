@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>兰州牛肉面 - 中国味道</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #d62828;
+            --secondary-color: #f77f00;
+            --accent-color: #fcbf49;
+            --bg-color: #eae2b7;
+            --card-bg: #ffffff;
+            --text-color: #003049;
+            --text-light: #666;
+        }
+
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        header.detail-header {
+            height: 40vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&q=80&w=1600') center/cover;
+            display: flex;
+            align-items: flex-end;
+            padding: 0 0 50px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .header-content {
+            width: 100%;
+        }
+
+        .detail-header h1 {
+            font-family: 'Zhi Mang Xing', cursive;
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: -30px auto 4rem;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+        }
+
+        .detail-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .ingredients-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .ingredients-list li {
+            background: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        footer {
+            background-color: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 3rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 1.5rem; margin: -20px 15px 2rem; }
+            .detail-header h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<a href="../index.html" class="back-btn">← 返回首页</a>
+
+<header class="detail-header">
+    <div class="header-content">
+        <h1>兰州牛肉面</h1>
+    </div>
+</header>
+
+<div class="container">
+    <div class="detail-content">
+        <p>兰州牛肉面是中国甘肃省兰州市的一种传统面食，被誉为“中华第一面”。它以独特的拉面技艺和鲜香的汤底而闻名，不仅是兰州人的“本命早餐”，也是中国分布最广的面食文化符号之一。</p>
+
+        <h3 class="section-title">五大标准</h3>
+        <p>正宗的兰州牛肉面必须符合“一清、二白、三红、四绿、五黄”的视觉和味觉标准：</p>
+        <ul class="ingredients-list">
+            <li><strong>一清：</strong>汤头清澈，由牛肉牛骨文火慢熬。</li>
+            <li><strong>二白：</strong>萝卜洁白如玉。</li>
+            <li><strong>三红：</strong>辣椒油鲜红锃亮。</li>
+            <li><strong>四绿：</strong>香菜、蒜苗青绿鲜爽。</li>
+            <li><strong>五黄：</strong>面条微黄，麦香味十足。</li>
+        </ul>
+
+        <h3 class="section-title">拉面技法</h3>
+        <p>兰州拉面的灵魂在于师傅的指尖。通过搋、揉、抻、摔等多道工序，面团在师傅手中变幻出不同粗细的形状：毛细、三细、二细、韭叶、大宽... 每一种宽度都带给食客截然不同的口感享受。</p>
+
+        <h3 class="section-title">文化意义</h3>
+        <p>兰州牛肉面不仅是一道美食，更承载了兰州这座城市的厚度与热情。无论清晨还是深夜，那一碗热气腾腾的面，都是对旅人最温暖的慰藉。它展示了西北饮食文化的坚韧与细腻。</p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 中国味道美食分享站 | 寻味中国，探索舌尖上的文化</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京烤鸭 - 中国味道</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #d62828;
+            --secondary-color: #f77f00;
+            --accent-color: #fcbf49;
+            --bg-color: #eae2b7;
+            --card-bg: #ffffff;
+            --text-color: #003049;
+            --text-light: #666;
+        }
+
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        header.detail-header {
+            height: 40vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1594912953284-486609919f2d?auto=format&fit=crop&q=80&w=1600') center/cover;
+            display: flex;
+            align-items: flex-end;
+            padding: 0 0 50px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .header-content {
+            width: 100%;
+        }
+
+        .detail-header h1 {
+            font-family: 'Zhi Mang Xing', cursive;
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: -30px auto 4rem;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+        }
+
+        .detail-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .ingredients-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .ingredients-list li {
+            background: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        footer {
+            background-color: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 3rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 1.5rem; margin: -20px 15px 2rem; }
+            .detail-header h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<a href="../index.html" class="back-btn">← 返回首页</a>
+
+<header class="detail-header">
+    <div class="header-content">
+        <h1>北京烤鸭</h1>
+    </div>
+</header>
+
+<div class="container">
+    <div class="detail-content">
+        <p>北京烤鸭是具有世界声誉的北京著名菜式，起源于中国南北朝时期，《食珍录》中已记有炙鸭，在当时是宫廷食品。用料为优质肉食鸭北京鸭，果木炭火烤制，色泽红艳，肉质细嫩，味道醇厚，肥而不腻的特色，被誉为“天下美味”。</p>
+
+        <h3 class="section-title">制作技艺</h3>
+        <p>北京烤鸭主要有两大流派：挂炉烤鸭和焖炉烤鸭。挂炉烤鸭不设炉门，以枣木、梨木等果木为燃料，使鸭子皮脆肉嫩，带有果木清香。焖炉烤鸭则利用炉墙热力将鸭子焖熟，鸭脯由于受热均匀，皮肉相连，更加鲜美多汁。</p>
+
+        <h3 class="section-title">地道吃法</h3>
+        <p>地道的吃法讲究“一鸭三吃”：</p>
+        <ul class="ingredients-list">
+            <li><strong>一吃皮：</strong>蘸白糖，入口即化。</li>
+            <li><strong>二吃肉：</strong>卷荷叶饼，配葱丝、甜面酱。</li>
+            <li><strong>三吃骨：</strong>熬成鲜美的鸭架汤。</li>
+        </ul>
+
+        <h3 class="section-title">文化意义</h3>
+        <p>北京烤鸭不仅是一道美食，更是北京乃至中国的一张文化名片。它不仅是国宴上的常客，也是许多中外游客来到北京后的“必打卡”体验。每一只烤鸭都承载着中国饮食文化的精髓和匠人精神。</p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 中国味道美食分享站 | 寻味中国，探索舌尖上的文化</p>
+</footer>
+
+</body>
+</html>

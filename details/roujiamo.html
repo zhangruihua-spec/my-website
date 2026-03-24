@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西安肉夹馍 - 中国味道</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #d62828;
+            --secondary-color: #f77f00;
+            --accent-color: #fcbf49;
+            --bg-color: #eae2b7;
+            --card-bg: #ffffff;
+            --text-color: #003049;
+            --text-light: #666;
+        }
+
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        header.detail-header {
+            height: 40vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&q=80&w=1600') center/cover;
+            display: flex;
+            align-items: flex-end;
+            padding: 0 0 50px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .header-content {
+            width: 100%;
+        }
+
+        .detail-header h1 {
+            font-family: 'Zhi Mang Xing', cursive;
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: -30px auto 4rem;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+        }
+
+        .detail-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .ingredients-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .ingredients-list li {
+            background: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        footer {
+            background-color: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 3rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 1.5rem; margin: -20px 15px 2rem; }
+            .detail-header h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<a href="../index.html" class="back-btn">← 返回首页</a>
+
+<header class="detail-header">
+    <div class="header-content">
+        <h1>西安肉夹馍</h1>
+    </div>
+</header>
+
+<div class="container">
+    <div class="detail-content">
+        <p>西安肉夹馍是陕西省西安市乃至西北地区的传统美食，被誉为“中式汉堡”。它由两种主要的元素组成：白吉馍和腊汁肉。这两种元素的结合，构成了肉夹馍最核心的魅力。</p>
+
+        <h3 class="section-title">腊汁肉</h3>
+        <p>腊汁肉的制作极其考究，需要选用上好的五花肉，在陈年老汤中，加入几十种中草药和香料，文火慢炖而成。这样炖出来的肉肥而不腻、瘦而不柴，汤香肉烂。</p>
+
+        <h3 class="section-title">白吉馍</h3>
+        <p>白吉馍的制作也大有学问，讲究“虎背铁圈菊花心”。馍坯在特制的烤炉上烤熟，外层焦脆，内里暄软。将馍从中间切开，夹入剁碎的腊汁肉，肉香瞬间渗透进馍的纹理。</p>
+
+        <h3 class="section-title">文化意义</h3>
+        <ul class="ingredients-list">
+            <li><strong>豪迈：</strong>大口咬下的满足感，体现了西北人的豪爽。</li>
+            <li><strong>精致：</strong>复杂的调味和烤制技法。</li>
+            <li><strong>传承：</strong>千年饮食文化的精髓。</li>
+        </ul>
+
+        <h3 class="section-title">推荐搭配</h3>
+        <p>正宗的西安肉夹馍往往搭配一碗“西安凉皮”或“冰峰汽水”，组成了西安著名的“三秦套餐”。这套组合不仅美味，更承载了西安人最深刻的情怀。</p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 中国味道美食分享站 | 寻味中国，探索舌尖上的文化</p>
+</footer>
+
+</body>
+</html>

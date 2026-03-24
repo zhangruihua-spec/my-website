@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>广式点心 - 中国味道</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #d62828;
+            --secondary-color: #f77f00;
+            --accent-color: #fcbf49;
+            --bg-color: #eae2b7;
+            --card-bg: #ffffff;
+            --text-color: #003049;
+            --text-light: #666;
+        }
+
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        header.detail-header {
+            height: 40vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1563245339-68d3746bb41c?auto=format&fit=crop&q=80&w=1600') center/cover;
+            display: flex;
+            align-items: flex-end;
+            padding: 0 0 50px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .header-content {
+            width: 100%;
+        }
+
+        .detail-header h1 {
+            font-family: 'Zhi Mang Xing', cursive;
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: -30px auto 4rem;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+        }
+
+        .detail-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .ingredients-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .ingredients-list li {
+            background: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        footer {
+            background-color: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 3rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 1.5rem; margin: -20px 15px 2rem; }
+            .detail-header h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<a href="../index.html" class="back-btn">← 返回首页</a>
+
+<header class="detail-header">
+    <div class="header-content">
+        <h1>广式点心</h1>
+    </div>
+</header>
+
+<div class="container">
+    <div class="detail-content">
+        <p>广式点心是中国广东地区的特色饮食，也是粤菜的重要组成部分。它以品种繁多、形态精美、制作考究、口味清新而著称，早已突破地域，成为全球华人的饮食共同记忆。</p>
+
+        <h3 class="section-title">点心文化</h3>
+        <p>广东人有“饮茶”的习惯，又称“叹茶”。点心是茶市的核心，无论是早茶、午茶还是夜茶，一盅热茶配上两三件精美点心，是广东人最悠闲惬意的生活方式。</p>
+
+        <h3 class="section-title">四大天王</h3>
+        <ul class="ingredients-list">
+            <li><strong>虾饺：</strong>皮薄如纸，晶莹剔透，虾仁鲜甜。</li>
+            <li><strong>干蒸烧卖：</strong>蛋皮包裹猪肉虾仁，顶缀蟹子。</li>
+            <li><strong>叉烧包：</strong>面皮喧软蓬松，馅料咸甜适口。</li>
+            <li><strong>蛋挞：</strong>皮酥层多，蛋香浓郁。</li>
+        </ul>
+
+        <h3 class="section-title">制作艺术</h3>
+        <p>广式点心讲究“精、美、新、洁”。师傅们通过蒸、炸、煮、烤等多种手段，将简单的面粉、海鲜、肉类转化成造型各异的艺术品。它不仅是食物，更是匠心传承的体现。</p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 中国味道美食分享站 | 寻味中国，探索舌尖上的文化</p>
+</footer>
+
+</body>
+</html>

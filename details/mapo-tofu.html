@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麻婆豆腐 - 中国味道</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #d62828;
+            --secondary-color: #f77f00;
+            --accent-color: #fcbf49;
+            --bg-color: #eae2b7;
+            --card-bg: #ffffff;
+            --text-color: #003049;
+            --text-light: #666;
+        }
+
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        header.detail-header {
+            height: 40vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&q=80&w=1600') center/cover;
+            display: flex;
+            align-items: flex-end;
+            padding: 0 0 50px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .header-content {
+            width: 100%;
+        }
+
+        .detail-header h1 {
+            font-family: 'Zhi Mang Xing', cursive;
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: -30px auto 4rem;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+        }
+
+        .detail-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .ingredients-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .ingredients-list li {
+            background: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        footer {
+            background-color: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 3rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 1.5rem; margin: -20px 15px 2rem; }
+            .detail-header h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<a href="../index.html" class="back-btn">← 返回首页</a>
+
+<header class="detail-header">
+    <div class="header-content">
+        <h1>麻婆豆腐</h1>
+    </div>
+</header>
+
+<div class="container">
+    <div class="detail-content">
+        <p>麻婆豆腐是四川省传统名菜之一，属于川菜系。其特色在于“麻、辣、烫、香、酥、嫩、鲜、活”八字。主要由豆腐、肉末、豆瓣酱、花椒等食材烹制而成，是川菜文化的重要组成部分。</p>
+
+        <h3 class="section-title">菜品渊源</h3>
+        <p>相传这道菜起源于清朝同治年间，由成都万福桥一家名叫“陈兴盛饭铺”的老板娘陈刘氏创制。因陈刘氏面部有麻点，人们便亲切地称呼她为“陈麻婆”，而她创制的这道豆腐菜也就被命名为“麻婆豆腐”。</p>
+
+        <h3 class="section-title">核心特点</h3>
+        <ul class="ingredients-list">
+            <li><strong>麻：</strong>特选四川贡椒，入口麻味纯正。</li>
+            <li><strong>辣：</strong>地道的郫县豆瓣酱，辣而不燥。</li>
+            <li><strong>烫：</strong>成菜后油膜封口，温度极高。</li>
+            <li><strong>嫩：</strong>豆腐细腻如凝脂，入口即化。</li>
+        </ul>
+
+        <h3 class="section-title">文化意义</h3>
+        <p>麻婆豆腐作为川菜的代表性菜肴，早已名扬中外。无论是高端食府还是寻常人家，它都是餐桌上的常客。它体现了四川饮食文化的包容性，展示了如何通过简单的食材创造出复杂而美妙的味觉层次。</p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 中国味道美食分享站 | 寻味中国，探索舌尖上的文化</p>
+</footer>
+
+</body>
+</html>
