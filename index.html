@@ -4,15 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>中国味道 - 全国美食地图</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+    
+    <!-- 预加载游戏核心资源，在后台静默下载 -->
+    <link rel="prefetch" href="game/Build/20260324web.loader.js">
+    <link rel="prefetch" href="game/Build/20260324web.framework.js.unityweb">
+    <link rel="prefetch" href="game/Build/20260324web.wasm.unityweb">
+
     <style>
         :root {
-            --primary-color: #d62828; /* 深红 */
-            --secondary-color: #f77f00; /* 橙 */
-            --accent-color: #fcbf49; /* 黄 */
-            --bg-color: #eae2b7; /* 奶白粉 */
+            --primary-color: #d62828;
+            --secondary-color: #f77f00;
+            --accent-color: #fcbf49;
+            --bg-color: #eae2b7;
             --card-bg: #ffffff;
-            --text-color: #003049; /* 深蓝 */
+            --text-color: #003049;
             --text-light: #666;
         }
 
@@ -30,7 +38,6 @@
             overflow-x: hidden;
         }
 
-        /* Hero Section */
         header {
             height: 60vh;
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
@@ -59,23 +66,46 @@
             animation: fadeInUp 1s ease-out 0.5s both;
         }
 
-        /* Container */
+        .game-banner {
+            text-align: center;
+            padding: 20px;
+            background: var(--primary-color);
+            color: white;
+            position: relative;
+            z-index: 20;
+        }
+
+        .btn-game {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--text-color);
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-game:hover {
+            transform: scale(1.05);
+            background: white;
+        }
+
         .container {
             max-width: 1200px;
-            margin: -50px auto 4rem;
+            margin: -30px auto 4rem;
             padding: 0 20px;
             position: relative;
             z-index: 10;
         }
 
-        /* Grid */
         .food-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        /* Card Design */
         .food-card {
             background: var(--card-bg);
             border-radius: 15px;
@@ -96,6 +126,7 @@
             height: 220px;
             object-fit: cover;
             transition: transform 0.5s ease;
+            background: #eee;
         }
 
         .food-card:hover .food-image {
@@ -115,7 +146,6 @@
             font-size: 0.8rem;
             font-weight: bold;
             margin-bottom: 15px;
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
         }
 
         .food-info h3 {
@@ -136,13 +166,6 @@
             background: var(--secondary-color);
         }
 
-        .food-info p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            text-align: justify;
-        }
-
-        /* Footer */
         footer {
             background-color: var(--text-color);
             color: white;
@@ -151,12 +174,6 @@
             margin-top: 4rem;
         }
 
-        footer p {
-            opacity: 0.7;
-            font-size: 0.9rem;
-        }
-
-        /* Animations */
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -167,10 +184,8 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Responsive adjustments */
         @media (max-width: 768px) {
             header h1 { font-size: 3.5rem; }
-            header p { font-size: 1.1rem; }
             .container { margin-top: -30px; }
         }
     </style>
@@ -182,14 +197,17 @@
     <p>—— 探索大江南北的舌尖记忆 ——</p>
 </header>
 
-<a href="./game/" class="btn">休息一下，玩个小游戏 🎮</a>
+<div class="game-banner">
+    <a href="game/index.html" class="btn-game">🎮 休息一下，玩个美食小游戏</a>
+    <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.8;">(点击后游戏将在后台预加载，减少等待时间)</p>
+</div>
 
 <div class="container">
     <div class="food-grid">
         <!-- 1. 北京烤鸭 -->
         <a href="details/beijing-roast-duck.html" style="text-decoration: none; color: inherit; display: block;">
             <div class="food-card">
-                <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&q=80&w=800" alt="北京烤鸭" class="food-image">
+                <img src="https://images.unsplash.com/photo-1625610815302-aa11b22e1d74?auto=format&fit=crop&q=80&w=800" alt="北京烤鸭" class="food-image" loading="lazy">
                 <div class="food-info">
                     <span class="tag">华北 · 北京</span>
                     <h3>北京烤鸭</h3>
@@ -201,7 +219,7 @@
         <!-- 2. 麻婆豆腐 -->
         <a href="details/mapo-tofu.html" style="text-decoration: none; color: inherit; display: block;">
             <div class="food-card">
-                <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&q=80&w=800" alt="麻婆豆腐" class="food-image">
+                <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&q=80&w=800" alt="麻婆豆腐" class="food-image" loading="lazy">
                 <div class="food-info">
                     <span class="tag">西南 · 四川</span>
                     <h3>麻婆豆腐</h3>
@@ -213,7 +231,7 @@
         <!-- 3. 广式点心 -->
         <a href="details/dim-sum.html" style="text-decoration: none; color: inherit; display: block;">
             <div class="food-card">
-                <img src="https://images.unsplash.com/photo-1630175860333-5131bda75071?auto=format&fit=crop&q=80&w=800" alt="广式点心" class="food-image">
+                <img src="https://images.unsplash.com/photo-1630175860333-5131bda75071?auto=format&fit=crop&q=80&w=800" alt="广式点心" class="food-image" loading="lazy">
                 <div class="food-info">
                     <span class="tag">华南 · 广东</span>
                     <h3>广式点心</h3>
@@ -225,7 +243,7 @@
         <!-- 4. 扬州炒饭 -->
         <a href="details/yangzhou-fried-rice.html" style="text-decoration: none; color: inherit; display: block;">
             <div class="food-card">
-                <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&q=80&w=800" alt="扬州炒饭" class="food-image">
+                <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&q=80&w=800" alt="扬州炒饭" class="food-image" loading="lazy">
                 <div class="food-info">
                     <span class="tag">华东 · 江苏</span>
                     <h3>扬州炒饭</h3>
@@ -237,7 +255,7 @@
         <!-- 5. 西安肉夹馍 -->
         <a href="details/roujiamo.html" style="text-decoration: none; color: inherit; display: block;">
             <div class="food-card">
-                <img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&q=80&w=800" alt="肉夹馍" class="food-image">
+                <img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&q=80&w=800" alt="肉夹馍" class="food-image" loading="lazy">
                 <div class="food-info">
                     <span class="tag">西北 · 陕西</span>
                     <h3>西安肉夹馍</h3>
@@ -249,7 +267,7 @@
         <!-- 6. 兰州牛肉面 -->
         <a href="details/lanzhou-noodles.html" style="text-decoration: none; color: inherit; display: block;">
             <div class="food-card">
-                <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&q=80&w=800" alt="兰州拉面" class="food-image">
+                <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&q=80&w=800" alt="兰州拉面" class="food-image" loading="lazy">
                 <div class="food-info">
                     <span class="tag">西北 · 甘肃</span>
                     <h3>兰州牛肉面</h3>
@@ -261,7 +279,7 @@
         <!-- 7. 上海小笼包 -->
         <a href="details/xiaolongbao.html" style="text-decoration: none; color: inherit; display: block;">
             <div class="food-card">
-                <img src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&q=80&w=800" alt="小笼包" class="food-image">
+                <img src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&q=80&w=800" alt="小笼包" class="food-image" loading="lazy">
                 <div class="food-info">
                     <span class="tag">华东 · 上海</span>
                     <h3>上海小笼包</h3>
@@ -273,7 +291,7 @@
         <!-- 8. 四川火锅 -->
         <a href="details/hotpot.html" style="text-decoration: none; color: inherit; display: block;">
             <div class="food-card">
-                <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?auto=format&fit=crop&q=80&w=800" alt="火锅" class="food-image">
+                <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?auto=format&fit=crop&q=80&w=800" alt="火锅" class="food-image" loading="lazy">
                 <div class="food-info">
                     <span class="tag">西南 · 四川</span>
                     <h3>四川火锅</h3>
